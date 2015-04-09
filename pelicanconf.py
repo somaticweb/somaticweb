@@ -6,27 +6,26 @@ SITENAME = u'Somatic Web'
 SITEURL = 'http://somaticweb.org'
 
 FEED_DOMAIN = SITEURL
-FEED_ATOM = 'feeds/all.atom.xml'
+#FEED_ALL_ATOM = 'feeds/all.atom.xml'
 
 TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = u'en'
 
 LINKS =  (
-#    ('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
-#    ('Python.org', 'http://python.org'),
-#    ('Jinja2', 'http://jinja.pocoo.org'),
-#    ('You can modify those links in your config file', '#'),
+    ("userops mailing list", "http://lists.mediagoblin.org/listinfo/userops"),
+    ("Sandstorm", "https://sandstorm.io/"),
 )
 
 SOCIAL = (
-    #('email', 'mailto:somaticweb@gmail.com'),
-    ('identi.ca', 'http://identi.ca/somaticweb'),
-    ('twitter', 'http://twitter.com/somaticweb'),
+    ('email', 'mailto:somaticweb@gmail.com'),
+    ('twitter', 'https://twitter.com/somaticweb'),
+    #('googleplus', 'https://plus.google.com/u/0/111187535762987664866'),
     ('reddit', 'http://www.reddit.com/user/somaticweb'),
-    #('github', 'https://github.com/somaticweb'),
-    #('gitorious', 'https://gitorious.org/~somaticweb'),
+    ('github', 'https://github.com/somaticweb'),
 )
+
+TWITTER_USERNAME = "somaticweb"
 
 THEME = "swtheme"
 
@@ -40,6 +39,12 @@ USE_FOLDER_AS_CATEGORY = False
 
 FILENAME_METADATA = r'(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 
-FILES_TO_COPY = (
-    #('extra/robots.txt', 'robots.txt'),
+# https://github.com/getpelican/pelican/blob/master/docs/settings.rst#path-metadata
+STATIC_PATHS = (
+    'extra/robots.txt',
+    'extra/humans.txt',
 )
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/humans.txt': {'path': 'humans.txt'},
+}
